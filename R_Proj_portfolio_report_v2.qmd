@@ -1,0 +1,240 @@
+---
+title: "Sleep Duration and Depressive Symptoms Among U.S. Adults"
+format:
+  html:
+    toc: false
+    number-sections: true
+    page-layout: full
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+library(tidyverse)
+library(survey)
+library(gtsummary)
+library(broom)
+library(nhanesA)
+library(scales)
+library(knitr)
+
+# Download NHANES 2017–2018 data
+demo <- nhanes("DEMO_J")
+dpq  <- nhanes("DPQ_J")
+slq  <- nhanes("SLQ_J")
+
+phq_vars <- c(
+  "DPQ010", "DPQ020", "DPQ030", "DPQ040", "DPQ050",
+  "DPQ060", "DPQ070", "DPQ080", "DPQ090"
+)
+
+recode_phq <- function(x) {
+  x_chr <- as.character(x)
+  case_when(
+    x_chr %in% c("0", "Not at all") ~ 0,
+    x_chr %in% c("1", "Several days") ~ 1,
+    x_chr %in% c("2", "More than half the days") ~ 2,
+    x_chr %in% c("3", "Nearly every day") ~ 3,
+    x_chr %in% c("7", "9", "Refused", "Don't know", "Dont know") ~ NA_real_,
+    TRUE ~ suppressWarnings(as.numeric(x_chr))
+  )
+}
+
+analytic <- demo %>%
+  select(SEQN, SDMVPSU, SDMVSTRA, WTINT2YR, RIDAGEYR, RIAGENDR, RIDRETH3) %>%
+  inner_join(dpq %>% select(SEQN, all_of(phq_vars)), by = "SEQN") %>%
+  inner_join(slq %>% select(SEQN, SLD012), by = "SEQN") %>%
+  mutate(
+    RIDAGEYR = suppressWarnings(as.numeric(as.character(RIDAGEYR))),
+    WTINT2YR = suppressWarnings(as.numeric(as.character(WTINT2YR))),
+    SDMVPSU = suppressWarnings(as.numeric(as.character(SDMVPSU))),
+    SDMVSTRA = suppressWarnings(as.numeric(as.character(SDMVSTRA))),
+    across(all_of(phq_vars), recode_phq),
+    sleep_hours = readr::parse_number(as.character(SLD012)),
+    phq9_total = rowSums(across(all_of(phq_vars)), na.rm = FALSE),
+    depression = if_else(phq9_total >= 10, 1, 0, missing = NA_real_),
+    sleep_cat = case_when(
+      sleep_hours < 7 ~ "Short sleep",
+      sleep_hours >= 7 & sleep_hours <= 9 ~ "Normal sleep",
+      sleep_hours > 9 ~ "Long sleep",
+      TRUE ~ NA_character_
+    ),
+    sex = case_when(
+      as.character(RIAGENDR) %in% c("1", "Male") ~ "Male",
+      as.character(RIAGENDR) %in% c("2", "Female") ~ "Female",
+      TRUE ~ NA_character_
+    ),
+    race_eth = case_when(
+      as.character(RIDRETH3) %in% c("1", "Mexican American") ~ "Mexican American",
+      as.character(RIDRETH3) %in% c("2", "Other Hispanic") ~ "Other Hispanic",
+      as.character(RIDRETH3) %in% c("3", "Non-Hispanic White") ~ "Non-Hispanic White",
+      as.character(RIDRETH3) %in% c("4", "Non-Hispanic Black") ~ "Non-Hispanic Black",
+      as.character(RIDRETH3) %in% c("6", "Non-Hispanic Asian") ~ "Non-Hispanic Asian",
+      as.character(RIDRETH3) %in% c("7", "Other Race - Including Multi-Racial", "Other / Multiracial") ~ "Other / Multiracial",
+      TRUE ~ NA_character_
+    ),
+    sex = factor(sex),
+    race_eth = factor(race_eth),
+    sleep_cat = factor(sleep_cat, levels = c("Normal sleep", "Short sleep", "Long sleep")),
+    depression_label = factor(
+      depression,
+      levels = c(0, 1),
+      labels = c("No depressive symptoms", "Depressive symptoms")
+    )
+  ) %>%
+  filter(RIDAGEYR >= 20) %>%
+  filter(
+    !is.na(WTINT2YR),
+    !is.na(SDMVPSU),
+    !is.na(SDMVSTRA),
+    !is.na(depression),
+    !is.na(sleep_cat),
+    !is.na(sex),
+    !is.na(race_eth)
+  )
+
+nhanes_design <- svydesign(
+  id = ~SDMVPSU,
+  strata = ~SDMVSTRA,
+  weights = ~WTINT2YR,
+  nest = TRUE,
+  data = analytic
+)
+
+tbl1 <- nhanes_design %>%
+  tbl_svysummary(
+    by = depression_label,
+    include = c(sleep_cat, RIDAGEYR, sex, race_eth),
+    statistic = list(
+      all_continuous() ~ "{mean} ({sd})",
+      all_categorical() ~ "{n} ({p}%)"
+    ),
+    digits = all_continuous() ~ 1,
+    label = list(
+      sleep_cat ~ "Sleep category",
+      RIDAGEYR ~ "Age (years)",
+      sex ~ "Sex",
+      race_eth ~ "Race/ethnicity"
+    )
+  ) %>%
+  modify_header(label = "**Variable**") %>%
+  bold_labels()
+
+fit <- svyglm(
+  depression ~ sleep_cat + RIDAGEYR + sex + race_eth,
+  design = nhanes_design,
+  family = quasibinomial()
+)
+
+or_table <- tidy(fit, conf.int = TRUE, exponentiate = TRUE) %>%
+  filter(term != "(Intercept)") %>%
+  mutate(
+    Term = case_when(
+      term == "sleep_catShort sleep" ~ "Short sleep vs Normal sleep",
+      term == "sleep_catLong sleep" ~ "Long sleep vs Normal sleep",
+      term == "RIDAGEYR" ~ "Age (per year)",
+      term == "sexMale" ~ "Male vs Female",
+      term == "race_ethNon-Hispanic Asian" ~ "Non-Hispanic Asian vs Mexican American",
+      term == "race_ethNon-Hispanic Black" ~ "Non-Hispanic Black vs Mexican American",
+      term == "race_ethNon-Hispanic White" ~ "Non-Hispanic White vs Mexican American",
+      term == "race_ethOther / Multiracial" ~ "Other / Multiracial vs Mexican American",
+      term == "race_ethOther Hispanic" ~ "Other Hispanic vs Mexican American",
+      TRUE ~ term
+    )
+  ) %>%
+  transmute(
+    Term,
+    `Odds Ratio` = round(estimate, 2),
+    `95% CI Lower` = round(conf.low, 2),
+    `95% CI Upper` = round(conf.high, 2),
+    `p-value` = signif(p.value, 3)
+  )
+
+prev_tbl <- svyby(
+  ~depression,
+  ~sleep_cat,
+  nhanes_design,
+  svymean,
+  vartype = c("ci"),
+  na.rm = TRUE
+) %>%
+  as_tibble() %>%
+  rename(
+    prevalence = depression,
+    ci_low = ci_l,
+    ci_high = ci_u
+  )
+```
+
+## Objective
+
+This project evaluates whether shorter sleep duration is associated with higher odds of clinically significant depressive symptoms among U.S. adults using NHANES 2017–2018.
+
+## Data source
+
+This analysis uses public NHANES 2017–2018 data from the demographics, depression screener, and sleep questionnaire files.
+
+## Study sample and variable definitions
+
+The analytic sample included **`r format(nrow(analytic), big.mark = ",")`** adults age 20 years and older with complete information on sleep duration, PHQ-9 depression items, age, sex, race/ethnicity, and NHANES interview survey design variables.
+
+-   **Outcome:** depressive symptoms, defined as **PHQ-9 \>= 10**
+-   **Exposure:** sleep duration grouped into **short sleep (\<7 hours)**, **normal sleep (7–9 hours)**, and **long sleep (\>9 hours)**
+-   **Covariates:** age, sex, and race/ethnicity
+
+Because NHANES uses a complex sampling design, all descriptive statistics and regression estimates were survey-weighted. The weighted counts shown below represent the estimated U.S. adult population, whereas the analytic sample size refers to the unweighted number of NHANES participants included in the analysis.
+
+## Descriptive results
+
+```{r}
+tbl1
+```
+
+The weighted descriptive results suggest that depressive symptoms were more common among participants with short and long sleep relative to normal sleep. In the weighted sample, the prevalence of depression was visually lowest in the normal-sleep group and higher in both the short-sleep and long-sleep groups.
+
+## Weighted prevalence of depressive symptoms by sleep category
+
+```{r}
+ggplot(prev_tbl, aes(x = sleep_cat, y = prevalence)) +
+  geom_col() +
+  geom_errorbar(aes(ymin = ci_low, ymax = ci_high), width = 0.15) +
+  scale_y_continuous(labels = percent_format(accuracy = 1)) +
+  labs(
+    title = "Weighted prevalence of depressive symptoms by sleep category",
+    x = "Sleep category",
+    y = "Prevalence of depression (PHQ-9 >= 10)"
+  ) +
+  theme_minimal()
+```
+
+The weighted prevalence estimates were approximately:
+
+-   **6.99%** for normal sleep
+-   **10.7%** for short sleep
+-   **12.9%** for long sleep
+
+## Survey-weighted logistic regression
+
+```{r}
+kable(or_table)
+```
+
+After adjustment for age, sex, and race/ethnicity:
+
+-   **Short sleep** was associated with higher odds of depressive symptoms compared with normal sleep (**OR 1.68, 95% CI 1.15 to 2.45**).
+-   **Long sleep** was also associated with higher odds of depressive symptoms compared with normal sleep (**OR 2.00, 95% CI 1.47 to 2.72**).
+-   **Male** participants had lower odds of depressive symptoms than female participants (**OR 0.64, 95% CI 0.43 to 0.95**).
+
+## Interpretation
+
+In this cross-sectional NHANES analysis, both short sleep and long sleep were associated with higher odds of clinically significant depressive symptoms relative to normal sleep duration. The pattern in both the prevalence estimates and the adjusted regression model suggests a U-shaped relationship, where depressive symptoms were least common among adults reporting 7–9 hours of sleep.
+
+## Limitations
+
+This is a **cross-sectional** analysis, so the results show **association rather than causation**. Poor sleep may contribute to depressive symptoms, depressive symptoms may worsen sleep, or both may be influenced by other unmeasured factors. Sleep duration was also self-reported, which may introduce measurement error.
+
+## Conclusion
+
+Findings from this analysis suggest that both short and long sleep duration are associated with higher odds of clinically significant depressive symptoms relative to normal sleep in U.S. adults. More broadly, this project demonstrates a complete public-health analysis workflow in R: downloading public data, cleaning and recoding variables, building a survey design object, generating weighted descriptive statistics, fitting a weighted logistic regression model, and interpreting findings in plain language.
