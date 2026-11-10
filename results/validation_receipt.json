@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "analysis_n": 4765,
+  "participant_columns_compared": ["SEQN", "age", "age_group", "sex", "race_code", "stratum", "psu", "mec_weight", "interview_weight", "phq9_total", "depression", "sleep_hours_code", "sleep_category"],
+  "summary_combinations_compared": 48,
+  "max_prevalence_absolute_error": 4.996e-16,
+  "interval_method": "95% logit CI with Taylor-linearized survey variance and t critical value",
+  "design_degrees_freedom": 15,
+  "R_version": "R version 4.5.0 (2025-04-11)",
+  "survey_version": "4.4.2",
+  "checks": ["Source key uniqueness", "Left joins preserve participant grain", "Independent R reconstruction matches SQL by ID and all 13 columns", "All 48 SQL grouped counts, cases and weighted rates match R survey calculations", "CIs use full MEC survey design with domain subsetting"]
+}

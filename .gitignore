@@ -1,0 +1,11 @@
+data/raw/
+data/nhanes.sqlite
+results/analysis_ready_sql.csv
+__pycache__/
+.DS_Store
+dashboard/.data-app-assets/
+dashboard/.data-app-offline/
+dashboard/.data-app-publish/
+dashboard/dist/
+dashboard/node_modules/
+docs/site-project-id.txt

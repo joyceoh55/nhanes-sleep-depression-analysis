@@ -1,0 +1,905 @@
+{
+  "surface": "dashboard",
+  "title": "Sleep and depressive symptoms",
+  "generatedAt": "2026-11-10T04:15:25.948981+00:00",
+  "status": "reviewed",
+  "buildStatus": "complete",
+  "filters": [
+    {
+      "id": "sleep",
+      "label": "Sleep category",
+      "field": "sleep_filter",
+      "defaultValue": "all",
+      "queryIds": [
+        "prevalence"
+      ],
+      "visible": false
+    },
+    {
+      "id": "sex",
+      "label": "Sex",
+      "field": "sex_filter",
+      "defaultValue": "all",
+      "queryIds": [
+        "prevalence"
+      ],
+      "visible": false
+    },
+    {
+      "id": "age",
+      "label": "Age group",
+      "field": "age_filter",
+      "defaultValue": "all",
+      "queryIds": [
+        "prevalence"
+      ],
+      "visible": false
+    }
+  ],
+  "queries": {
+    "prevalence": {
+      "rows": [
+        {
+          "sleep_filter": "All",
+          "sex_filter": "All",
+          "age_filter": "20-39",
+          "sample_n": 1444,
+          "cases_n": 125,
+          "weight_sum": 79082556.6757348,
+          "weighted_cases": 7094230.55877842,
+          "prevalence": 0.0897066414767944,
+          "difference_from_normal": 0.0158497124339337,
+          "r_prevalence": 0.0897066414767944,
+          "ci_low": 0.0711142553652568,
+          "ci_high": 0.112570813059043,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Normal sleep",
+          "sex_filter": "All",
+          "age_filter": "20-39",
+          "sample_n": 935,
+          "cases_n": 70,
+          "weight_sum": 53413182.7990863,
+          "weighted_cases": 3944933.65194546,
+          "prevalence": 0.0738569290428607,
+          "difference_from_normal": 0.0,
+          "r_prevalence": 0.0738569290428607,
+          "ci_low": 0.0550019403269537,
+          "ci_high": 0.0985017859507436,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Short sleep",
+          "sex_filter": "All",
+          "age_filter": "20-39",
+          "sample_n": 360,
+          "cases_n": 42,
+          "weight_sum": 18564165.0306891,
+          "weighted_cases": 2387037.11851666,
+          "prevalence": 0.128583058520034,
+          "difference_from_normal": 0.0547261294771733,
+          "r_prevalence": 0.128583058520034,
+          "ci_low": 0.0874907801789695,
+          "ci_high": 0.185061234449313,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Long sleep",
+          "sex_filter": "All",
+          "age_filter": "20-39",
+          "sample_n": 149,
+          "cases_n": 13,
+          "weight_sum": 7105208.84595948,
+          "weighted_cases": 762259.788316294,
+          "prevalence": 0.10728182729629,
+          "difference_from_normal": 0.0334248982534288,
+          "r_prevalence": 0.10728182729629,
+          "ci_low": 0.0675505937210315,
+          "ci_high": 0.166216130676437,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "All",
+          "sex_filter": "All",
+          "age_filter": "40-59",
+          "sample_n": 1528,
+          "cases_n": 141,
+          "weight_sum": 78616049.8911692,
+          "weighted_cases": 6626901.32518684,
+          "prevalence": 0.0842945090011604,
+          "difference_from_normal": 0.0066378529079656,
+          "r_prevalence": 0.0842945090011604,
+          "ci_low": 0.0683085626589295,
+          "ci_high": 0.103605561024309,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Normal sleep",
+          "sex_filter": "All",
+          "age_filter": "40-59",
+          "sample_n": 954,
+          "cases_n": 88,
+          "weight_sum": 51222420.8349789,
+          "weighted_cases": 3977761.91904285,
+          "prevalence": 0.0776566560931947,
+          "difference_from_normal": 0.0,
+          "r_prevalence": 0.0776566560931947,
+          "ci_low": 0.0565951549556597,
+          "ci_high": 0.105678068219033,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Short sleep",
+          "sex_filter": "All",
+          "age_filter": "40-59",
+          "sample_n": 468,
+          "cases_n": 33,
+          "weight_sum": 23682176.8324729,
+          "weighted_cases": 1892858.21672885,
+          "prevalence": 0.0799275434061185,
+          "difference_from_normal": 0.0022708873129237,
+          "r_prevalence": 0.0799275434061185,
+          "ci_low": 0.0526108797061469,
+          "ci_high": 0.119636507029155,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Long sleep",
+          "sex_filter": "All",
+          "age_filter": "40-59",
+          "sample_n": 106,
+          "cases_n": 20,
+          "weight_sum": 3711452.22371744,
+          "weighted_cases": 756281.189415141,
+          "prevalence": 0.203769614649017,
+          "difference_from_normal": 0.126112958555822,
+          "r_prevalence": 0.203769614649017,
+          "ci_low": 0.102254478155959,
+          "ci_high": 0.365081724488489,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "All",
+          "sex_filter": "All",
+          "age_filter": "60+",
+          "sample_n": 1793,
+          "cases_n": 161,
+          "weight_sum": 64369410.7385879,
+          "weighted_cases": 5003585.21653339,
+          "prevalence": 0.0777323445891646,
+          "difference_from_normal": 0.0242284972287082,
+          "r_prevalence": 0.0777323445891646,
+          "ci_low": 0.0588097117730958,
+          "ci_high": 0.102083155014323,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Normal sleep",
+          "sex_filter": "All",
+          "age_filter": "60+",
+          "sample_n": 1138,
+          "cases_n": 80,
+          "weight_sum": 42402126.007559,
+          "weighted_cases": 2268676.87766728,
+          "prevalence": 0.0535038473604564,
+          "difference_from_normal": 0.0,
+          "r_prevalence": 0.0535038473604564,
+          "ci_low": 0.0361268752864616,
+          "ci_high": 0.0785578959847095,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Short sleep",
+          "sex_filter": "All",
+          "age_filter": "60+",
+          "sample_n": 415,
+          "cases_n": 47,
+          "weight_sum": 13006431.0285882,
+          "weighted_cases": 1604553.5606132,
+          "prevalence": 0.123366168404414,
+          "difference_from_normal": 0.0698623210439573,
+          "r_prevalence": 0.123366168404414,
+          "ci_low": 0.0612382458735892,
+          "ci_high": 0.23288800381885,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Long sleep",
+          "sex_filter": "All",
+          "age_filter": "60+",
+          "sample_n": 240,
+          "cases_n": 34,
+          "weight_sum": 8960853.70244069,
+          "weighted_cases": 1130354.77825291,
+          "prevalence": 0.126143648338442,
+          "difference_from_normal": 0.0726398009779858,
+          "r_prevalence": 0.126143648338442,
+          "ci_low": 0.0790881507298011,
+          "ci_high": 0.195259869989492,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "All",
+          "sex_filter": "All",
+          "age_filter": "All",
+          "sample_n": 4765,
+          "cases_n": 427,
+          "weight_sum": 222068017.305492,
+          "weighted_cases": 18724717.1004986,
+          "prevalence": 0.0843197382842377,
+          "difference_from_normal": 0.0150084637324946,
+          "r_prevalence": 0.0843197382842377,
+          "ci_low": 0.0734135072854223,
+          "ci_high": 0.096677143170855,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Normal sleep",
+          "sex_filter": "All",
+          "age_filter": "All",
+          "sample_n": 3027,
+          "cases_n": 238,
+          "weight_sum": 147037729.641624,
+          "weighted_cases": 10191372.4486556,
+          "prevalence": 0.0693112745517431,
+          "difference_from_normal": 0.0,
+          "r_prevalence": 0.0693112745517431,
+          "ci_low": 0.0606375101236572,
+          "ci_high": 0.0791212550506585,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Short sleep",
+          "sex_filter": "All",
+          "age_filter": "All",
+          "sample_n": 1243,
+          "cases_n": 122,
+          "weight_sum": 55252772.8917502,
+          "weighted_cases": 5884448.89585872,
+          "prevalence": 0.106500517311364,
+          "difference_from_normal": 0.0371892427596212,
+          "r_prevalence": 0.106500517311364,
+          "ci_low": 0.0805220223381611,
+          "ci_high": 0.139587960167759,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Long sleep",
+          "sex_filter": "All",
+          "age_filter": "All",
+          "sample_n": 495,
+          "cases_n": 67,
+          "weight_sum": 19777514.7721176,
+          "weighted_cases": 2648895.75598434,
+          "prevalence": 0.133934712551385,
+          "difference_from_normal": 0.0646234379996418,
+          "r_prevalence": 0.133934712551385,
+          "ci_low": 0.106993924407947,
+          "ci_high": 0.166395119021244,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "All",
+          "sex_filter": "Female",
+          "age_filter": "20-39",
+          "sample_n": 759,
+          "cases_n": 76,
+          "weight_sum": 39632259.1564561,
+          "weighted_cases": 4346677.60999968,
+          "prevalence": 0.10967524189929,
+          "difference_from_normal": 0.0251435881180267,
+          "r_prevalence": 0.10967524189929,
+          "ci_low": 0.0778669523831191,
+          "ci_high": 0.15233061894808,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Normal sleep",
+          "sex_filter": "Female",
+          "age_filter": "20-39",
+          "sample_n": 516,
+          "cases_n": 42,
+          "weight_sum": 28278736.4500051,
+          "weighted_cases": 2390448.35896342,
+          "prevalence": 0.0845316537812634,
+          "difference_from_normal": 0.0,
+          "r_prevalence": 0.0845316537812634,
+          "ci_low": 0.0626897640502919,
+          "ci_high": 0.113065553484025,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Short sleep",
+          "sex_filter": "Female",
+          "age_filter": "20-39",
+          "sample_n": 152,
+          "cases_n": 27,
+          "weight_sum": 7396249.33290193,
+          "weighted_cases": 1547800.24377627,
+          "prevalence": 0.209268262075879,
+          "difference_from_normal": 0.124736608294616,
+          "r_prevalence": 0.209268262075879,
+          "ci_low": 0.130432570329416,
+          "ci_high": 0.318311122470178,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Long sleep",
+          "sex_filter": "Female",
+          "age_filter": "20-39",
+          "sample_n": 91,
+          "cases_n": 7,
+          "weight_sum": 3957273.37354909,
+          "weighted_cases": 408429.007259987,
+          "prevalence": 0.103209702415299,
+          "difference_from_normal": 0.0186780486340354,
+          "r_prevalence": 0.103209702415299,
+          "ci_low": 0.0428488629066645,
+          "ci_high": 0.228317467390287,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "All",
+          "sex_filter": "Female",
+          "age_filter": "40-59",
+          "sample_n": 803,
+          "cases_n": 87,
+          "weight_sum": 39713052.9777123,
+          "weighted_cases": 4026643.27832627,
+          "prevalence": 0.10139344564081,
+          "difference_from_normal": -0.0042747446840562,
+          "r_prevalence": 0.10139344564081,
+          "ci_low": 0.0738672547619988,
+          "ci_high": 0.137652523559303,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Normal sleep",
+          "sex_filter": "Female",
+          "age_filter": "40-59",
+          "sample_n": 521,
+          "cases_n": 60,
+          "weight_sum": 27370636.6084801,
+          "weighted_cases": 2892205.63845763,
+          "prevalence": 0.105668190324866,
+          "difference_from_normal": 0.0,
+          "r_prevalence": 0.105668190324866,
+          "ci_low": 0.0734846825113834,
+          "ci_high": 0.149669914331746,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Short sleep",
+          "sex_filter": "Female",
+          "age_filter": "40-59",
+          "sample_n": 217,
+          "cases_n": 13,
+          "weight_sum": 9967895.55059819,
+          "weighted_cases": 580565.248967538,
+          "prevalence": 0.0582435124867151,
+          "difference_from_normal": -0.0474246778381511,
+          "r_prevalence": 0.0582435124867152,
+          "ci_low": 0.0292757464659543,
+          "ci_high": 0.112550959626835,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Long sleep",
+          "sex_filter": "Female",
+          "age_filter": "40-59",
+          "sample_n": 65,
+          "cases_n": 14,
+          "weight_sum": 2374520.81863398,
+          "weighted_cases": 553872.390901109,
+          "prevalence": 0.233256489711361,
+          "difference_from_normal": 0.127588299386494,
+          "r_prevalence": 0.233256489711361,
+          "ci_low": 0.100124891724185,
+          "ci_high": 0.454082319922197,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "All",
+          "sex_filter": "Female",
+          "age_filter": "60+",
+          "sample_n": 874,
+          "cases_n": 94,
+          "weight_sum": 34930697.0771304,
+          "weighted_cases": 3023955.59356747,
+          "prevalence": 0.0865701473660912,
+          "difference_from_normal": 0.0302392438414568,
+          "r_prevalence": 0.0865701473660912,
+          "ci_low": 0.0618733732501372,
+          "ci_high": 0.11986512060531,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Normal sleep",
+          "sex_filter": "Female",
+          "age_filter": "60+",
+          "sample_n": 566,
+          "cases_n": 51,
+          "weight_sum": 23387144.2160296,
+          "weighted_cases": 1317418.96454987,
+          "prevalence": 0.0563309035246344,
+          "difference_from_normal": 0.0,
+          "r_prevalence": 0.0563309035246344,
+          "ci_low": 0.033709226458524,
+          "ci_high": 0.0926775746332338,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Short sleep",
+          "sex_filter": "Female",
+          "age_filter": "60+",
+          "sample_n": 183,
+          "cases_n": 24,
+          "weight_sum": 6179364.87753012,
+          "weighted_cases": 835480.157592749,
+          "prevalence": 0.135204859099806,
+          "difference_from_normal": 0.0788739555751715,
+          "r_prevalence": 0.135204859099806,
+          "ci_low": 0.0542154258580108,
+          "ci_high": 0.298939338658703,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Long sleep",
+          "sex_filter": "Female",
+          "age_filter": "60+",
+          "sample_n": 125,
+          "cases_n": 19,
+          "weight_sum": 5364187.98357065,
+          "weighted_cases": 871056.471424843,
+          "prevalence": 0.162383658830135,
+          "difference_from_normal": 0.1060527553055,
+          "r_prevalence": 0.162383658830135,
+          "ci_low": 0.098985098126415,
+          "ci_high": 0.254900545037888,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "All",
+          "sex_filter": "Female",
+          "age_filter": "All",
+          "sample_n": 2436,
+          "cases_n": 257,
+          "weight_sum": 114276009.211299,
+          "weighted_cases": 11397276.4818934,
+          "prevalence": 0.0997346386223518,
+          "difference_from_normal": 0.0162280116913204,
+          "r_prevalence": 0.0997346386223518,
+          "ci_low": 0.0804103356686256,
+          "ci_high": 0.123081404169708,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Normal sleep",
+          "sex_filter": "Female",
+          "age_filter": "All",
+          "sample_n": 1603,
+          "cases_n": 153,
+          "weight_sum": 79036517.2745147,
+          "weighted_cases": 6600072.96197092,
+          "prevalence": 0.0835066269310314,
+          "difference_from_normal": 0.0,
+          "r_prevalence": 0.0835066269310314,
+          "ci_low": 0.0691553236795502,
+          "ci_high": 0.100514557516138,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Short sleep",
+          "sex_filter": "Female",
+          "age_filter": "All",
+          "sample_n": 552,
+          "cases_n": 64,
+          "weight_sum": 23543509.7610302,
+          "weighted_cases": 2963845.65033655,
+          "prevalence": 0.125888012467979,
+          "difference_from_normal": 0.0423813855369474,
+          "r_prevalence": 0.125888012467979,
+          "ci_low": 0.0797979243458404,
+          "ci_high": 0.193015221015862,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Long sleep",
+          "sex_filter": "Female",
+          "age_filter": "All",
+          "sample_n": 281,
+          "cases_n": 40,
+          "weight_sum": 11695982.1757537,
+          "weighted_cases": 1833357.86958594,
+          "prevalence": 0.156751082725363,
+          "difference_from_normal": 0.0732444557943313,
+          "r_prevalence": 0.156751082725363,
+          "ci_low": 0.110764381137604,
+          "ci_high": 0.217167599724079,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "All",
+          "sex_filter": "Male",
+          "age_filter": "20-39",
+          "sample_n": 685,
+          "cases_n": 49,
+          "weight_sum": 39450297.5192787,
+          "weighted_cases": 2747552.94877874,
+          "prevalence": 0.0696459373325652,
+          "difference_from_normal": 0.0077991287181051,
+          "r_prevalence": 0.0696459373325653,
+          "ci_low": 0.0546385787106076,
+          "ci_high": 0.0883899048182231,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Normal sleep",
+          "sex_filter": "Male",
+          "age_filter": "20-39",
+          "sample_n": 419,
+          "cases_n": 28,
+          "weight_sum": 25134446.3490812,
+          "weighted_cases": 1554485.29298204,
+          "prevalence": 0.0618468086144601,
+          "difference_from_normal": 0.0,
+          "r_prevalence": 0.0618468086144601,
+          "ci_low": 0.0397742598268906,
+          "ci_high": 0.0949571055901474,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Short sleep",
+          "sex_filter": "Male",
+          "age_filter": "20-39",
+          "sample_n": 208,
+          "cases_n": 15,
+          "weight_sum": 11167915.6977871,
+          "weighted_cases": 839236.874740395,
+          "prevalence": 0.0751471355489087,
+          "difference_from_normal": 0.0133003269344486,
+          "r_prevalence": 0.0751471355489087,
+          "ci_low": 0.0431721574737814,
+          "ci_high": 0.127644761143881,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Long sleep",
+          "sex_filter": "Male",
+          "age_filter": "20-39",
+          "sample_n": 58,
+          "cases_n": 6,
+          "weight_sum": 3147935.47241039,
+          "weighted_cases": 353830.781056306,
+          "prevalence": 0.112400900259044,
+          "difference_from_normal": 0.0505540916445838,
+          "r_prevalence": 0.112400900259044,
+          "ci_low": 0.0452504276201048,
+          "ci_high": 0.252814114801527,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "All",
+          "sex_filter": "Male",
+          "age_filter": "40-59",
+          "sample_n": 725,
+          "cases_n": 54,
+          "weight_sum": 38902996.913457,
+          "weighted_cases": 2600258.04686057,
+          "prevalence": 0.06683953045173,
+          "difference_from_normal": 0.0213269486558913,
+          "r_prevalence": 0.06683953045173,
+          "ci_low": 0.0472917369050955,
+          "ci_high": 0.0936728574111538,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Normal sleep",
+          "sex_filter": "Male",
+          "age_filter": "40-59",
+          "sample_n": 433,
+          "cases_n": 28,
+          "weight_sum": 23851784.2264988,
+          "weighted_cases": 1085556.28058522,
+          "prevalence": 0.0455125817958387,
+          "difference_from_normal": 0.0,
+          "r_prevalence": 0.0455125817958387,
+          "ci_low": 0.0285773197805705,
+          "ci_high": 0.0717426895880064,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Short sleep",
+          "sex_filter": "Male",
+          "age_filter": "40-59",
+          "sample_n": 251,
+          "cases_n": 20,
+          "weight_sum": 13714281.2818747,
+          "weighted_cases": 1312292.96776131,
+          "prevalence": 0.0956880598253214,
+          "difference_from_normal": 0.0501754780294827,
+          "r_prevalence": 0.0956880598253214,
+          "ci_low": 0.0533784561070141,
+          "ci_high": 0.165664694836292,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Long sleep",
+          "sex_filter": "Male",
+          "age_filter": "40-59",
+          "sample_n": 41,
+          "cases_n": 6,
+          "weight_sum": 1336931.40508346,
+          "weighted_cases": 202408.798514031,
+          "prevalence": 0.151398043119045,
+          "difference_from_normal": 0.105885461323207,
+          "r_prevalence": 0.151398043119045,
+          "ci_low": 0.052088422443368,
+          "ci_high": 0.366784313618089,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "All",
+          "sex_filter": "Male",
+          "age_filter": "60+",
+          "sample_n": 919,
+          "cases_n": 67,
+          "weight_sum": 29438713.6614575,
+          "weighted_cases": 1979629.62296592,
+          "prevalence": 0.0672457922493311,
+          "difference_from_normal": 0.0172190331629166,
+          "r_prevalence": 0.0672457922493311,
+          "ci_low": 0.0422873462058137,
+          "ci_high": 0.105315111451192,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Normal sleep",
+          "sex_filter": "Male",
+          "age_filter": "60+",
+          "sample_n": 572,
+          "cases_n": 29,
+          "weight_sum": 19014981.7915294,
+          "weighted_cases": 951257.913117401,
+          "prevalence": 0.0500267590864145,
+          "difference_from_normal": 0.0,
+          "r_prevalence": 0.0500267590864145,
+          "ci_low": 0.030241605007945,
+          "ci_high": 0.0816660144640168,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Short sleep",
+          "sex_filter": "Male",
+          "age_filter": "60+",
+          "sample_n": 232,
+          "cases_n": 23,
+          "weight_sum": 6827066.15105808,
+          "weighted_cases": 769073.403020455,
+          "prevalence": 0.11265064465521,
+          "difference_from_normal": 0.0626238855687953,
+          "r_prevalence": 0.11265064465521,
+          "ci_low": 0.0468542897349655,
+          "ci_high": 0.246908384422262,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Long sleep",
+          "sex_filter": "Male",
+          "age_filter": "60+",
+          "sample_n": 115,
+          "cases_n": 15,
+          "weight_sum": 3596665.71887005,
+          "weighted_cases": 259298.306828063,
+          "prevalence": 0.0720940802109143,
+          "difference_from_normal": 0.0220673211244998,
+          "r_prevalence": 0.0720940802109143,
+          "ci_low": 0.0335935849406232,
+          "ci_high": 0.147963028569845,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "All",
+          "sex_filter": "Male",
+          "age_filter": "All",
+          "sample_n": 2329,
+          "cases_n": 170,
+          "weight_sum": 107792008.094193,
+          "weighted_cases": 7327440.61860523,
+          "prevalence": 0.0679775870972011,
+          "difference_from_normal": 0.01516530093829,
+          "r_prevalence": 0.0679775870972011,
+          "ci_low": 0.0565916164293522,
+          "ci_high": 0.0814565676532613,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Normal sleep",
+          "sex_filter": "Male",
+          "age_filter": "All",
+          "sample_n": 1424,
+          "cases_n": 85,
+          "weight_sum": 68001212.3671094,
+          "weighted_cases": 3591299.48668466,
+          "prevalence": 0.052812286158911,
+          "difference_from_normal": 0.0,
+          "r_prevalence": 0.052812286158911,
+          "ci_low": 0.0411746707442115,
+          "ci_high": 0.0675075738096506,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Short sleep",
+          "sex_filter": "Male",
+          "age_filter": "All",
+          "sample_n": 691,
+          "cases_n": 58,
+          "weight_sum": 31709263.13072,
+          "weighted_cases": 2920603.24552216,
+          "prevalence": 0.0921056800809944,
+          "difference_from_normal": 0.0392933939220834,
+          "r_prevalence": 0.0921056800809944,
+          "ci_low": 0.0666712607661788,
+          "ci_high": 0.125933855571043,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        },
+        {
+          "sleep_filter": "Long sleep",
+          "sex_filter": "Male",
+          "age_filter": "All",
+          "sample_n": 214,
+          "cases_n": 27,
+          "weight_sum": 8081532.5963639,
+          "weighted_cases": 815537.886398401,
+          "prevalence": 0.100913765634669,
+          "difference_from_normal": 0.0481014794757575,
+          "r_prevalence": 0.100913765634669,
+          "ci_low": 0.0746748431839737,
+          "ci_high": 0.135027030155246,
+          "ci_method": "95% logit CI with Taylor-linearized survey variance and t critical value"
+        }
+      ],
+      "source": {
+        "label": "NHANES 2017-2018 complete-case adult analysis",
+        "sql": "-- All rows are explicit filter combinations, never additive across All and subgroups.\n-- Point estimates only: SQL does not pretend ordinary binomial CIs are survey CIs.\nWITH sleep_levels AS (\n  SELECT 'All' AS sleep_filter UNION ALL SELECT 'Normal sleep'\n  UNION ALL SELECT 'Short sleep' UNION ALL SELECT 'Long sleep'\n), sex_levels AS (\n  SELECT 'All' AS sex_filter UNION ALL SELECT 'Female' UNION ALL SELECT 'Male'\n), age_levels AS (\n  SELECT 'All' AS age_filter UNION ALL SELECT '20-39'\n  UNION ALL SELECT '40-59' UNION ALL SELECT '60+'\n), combinations AS (\n  SELECT * FROM sleep_levels CROSS JOIN sex_levels CROSS JOIN age_levels\n), summaries AS (\n  SELECT c.sleep_filter, c.sex_filter, c.age_filter,\n         COUNT(a.SEQN) AS sample_n,\n         COALESCE(SUM(a.depression),0) AS cases_n,\n         SUM(a.mec_weight) AS weight_sum,\n         SUM(a.mec_weight*a.depression) AS weighted_cases,\n         SUM(a.mec_weight*a.depression)/NULLIF(SUM(a.mec_weight),0) AS prevalence\n  FROM combinations c LEFT JOIN analysis_ready a\n    ON (c.sleep_filter='All' OR a.sleep_category=c.sleep_filter)\n   AND (c.sex_filter='All' OR a.sex=c.sex_filter)\n   AND (c.age_filter='All' OR a.age_group=c.age_filter)\n  GROUP BY c.sleep_filter,c.sex_filter,c.age_filter\n)\nSELECT *,\n       -- Window benchmark compares sleep groups within the same sex/age scope.\n       prevalence-MAX(CASE WHEN sleep_filter='Normal sleep' THEN prevalence END)\n         OVER (PARTITION BY sex_filter,age_filter) AS difference_from_normal\nFROM summaries\nORDER BY sex_filter,age_filter,\n  CASE sleep_filter WHEN 'All' THEN 0 WHEN 'Normal sleep' THEN 1\n                    WHEN 'Short sleep' THEN 2 ELSE 3 END;\n\n",
+        "tables": [
+          "demographics",
+          "depression",
+          "sleep",
+          "analysis_ready"
+        ],
+        "files": [
+          "DEMO_J.xpt",
+          "DPQ_J.xpt",
+          "SLQ_J.xpt"
+        ],
+        "links": [
+          {
+            "label": "DEMO_J CDC data",
+            "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DEMO_J.xpt"
+          },
+          {
+            "label": "DPQ_J CDC data",
+            "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DPQ_J.xpt"
+          },
+          {
+            "label": "SLQ_J CDC data",
+            "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/SLQ_J.xpt"
+          }
+        ],
+        "filters": [
+          "Adults age 20+",
+          "Complete nine-item PHQ-9, sleep, sex and race/ethnicity",
+          "Positive MEC weight and nonmissing stratum/PSU"
+        ],
+        "caveats": [
+          "Cross-sectional association; not a causal effect or clinical diagnosis.",
+          "MEC weights correct the interview-weight choice in the historical project.",
+          "Complete-case exclusions may introduce selection bias.",
+          "PHQ-9 >=10 is a screening threshold, not a clinical diagnosis.",
+          "SLD012 describes the main sleep period on weekdays/workdays, not total 24-hour sleep. Its boundary codes remain within the appropriate broad sleep category.",
+          "PHQ-9 includes a sleep symptom item; conceptual overlap limits interpretation of the sleep association."
+        ],
+        "metricDefinitions": [
+          {
+            "label": "Weighted prevalence",
+            "definition": "Sum of MEC weights for PHQ-9 >=10 divided by MEC weights for all included participants in the selected subgroup."
+          },
+          {
+            "label": "Sample size",
+            "definition": "Unweighted number of complete-case participants in the selected subgroup."
+          },
+          {
+            "label": "95% confidence interval",
+            "definition": "Logit interval using Taylor-linearized survey variance, survey package svyciprop, t critical values and domain subsetting of the full positive-weight MEC design."
+          }
+        ],
+        "executedAt": "2026-11-10T04:15:25.948981+00:00",
+        "evidenceFlow": [
+          {
+            "title": "CDC public source files",
+            "detail": "DEMO_J, DPQ_J and SLQ_J XPORT files downloaded from CDC; URLs and SHA-256 values are retained in results/source_manifest.json."
+          },
+          {
+            "title": "SQLite preparation",
+            "detail": "scripts/build_data.py loads three one-row-per-participant source tables and executes sql/01_prepare_analysis.sql and sql/02_summaries.sql."
+          },
+          {
+            "title": "Independent R reconciliation",
+            "detail": "scripts/validate_in_r.R reads the original XPORT files independently, matches 4,765 participant records across 13 columns, validates 48 grouped summaries and computes survey-domain 95% logit intervals."
+          }
+        ]
+      }
+    },
+    "cohort_flow": {
+      "rows": [
+        {
+          "cohort_status": "1 Under 20 or missing age",
+          "sample_n": 3685
+        },
+        {
+          "cohort_status": "2 Incomplete PHQ-9",
+          "sample_n": 744
+        },
+        {
+          "cohort_status": "3 Missing or invalid sleep",
+          "sample_n": 60
+        },
+        {
+          "cohort_status": "7 Included",
+          "sample_n": 4765
+        }
+      ],
+      "source": {
+        "label": "Sequential complete-case cohort exclusions",
+        "sql": "SELECT cohort_status, COUNT(*) AS sample_n FROM cohort_audit GROUP BY cohort_status ORDER BY cohort_status;",
+        "tables": [
+          "cohort_audit"
+        ],
+        "caveats": [
+          "Exclusion counts are sequential and mutually exclusive, not independent missingness counts."
+        ]
+      }
+    },
+    "validation": {
+      "rows": [
+        {
+          "check": "Source key uniqueness",
+          "result": "Passed"
+        },
+        {
+          "check": "Left joins preserve participant grain",
+          "result": "Passed"
+        },
+        {
+          "check": "Independent R reconstruction matches SQL by ID and all 13 columns",
+          "result": "Passed"
+        },
+        {
+          "check": "All 48 SQL grouped counts, cases and weighted rates match R survey calculations",
+          "result": "Passed"
+        },
+        {
+          "check": "CIs use full MEC survey design with domain subsetting",
+          "result": "Passed"
+        }
+      ],
+      "source": {
+        "label": "Independent R validation receipt",
+        "files": [
+          "scripts/validate_in_r.R",
+          "results/validation_receipt.json"
+        ],
+        "caveats": [
+          "SQL/R agreement validates implementation of specified rules; it does not eliminate selection bias or causal limitations."
+        ]
+      }
+    }
+  },
+  "id": "dashboard:25245fa8-43a7-49a1-b29f-c23f73998639",
+  "exportPreferences": {
+    "selected": null,
+    "destinations": []
+  }
+}
