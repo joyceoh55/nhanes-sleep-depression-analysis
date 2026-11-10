@@ -1,0 +1,52 @@
+{
+  "retrieved_at": "2026-11-10T04:15:25.948981+00:00",
+  "files": [
+    {
+      "name": "DEMO_J",
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DEMO_J.xpt",
+      "rows": 9254,
+      "columns": [
+        "SEQN",
+        "RIDAGEYR",
+        "RIAGENDR",
+        "RIDRETH3",
+        "SDMVSTRA",
+        "SDMVPSU",
+        "WTMEC2YR",
+        "WTINT2YR"
+      ],
+      "sha256": "c0b46e0345ea19404928656277c8b0d10b0cca348a9b2fe4fc3c67e8b7ee73ec",
+      "bytes": 3412720
+    },
+    {
+      "name": "DPQ_J",
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/DPQ_J.xpt",
+      "rows": 5533,
+      "columns": [
+        "SEQN",
+        "DPQ010",
+        "DPQ020",
+        "DPQ030",
+        "DPQ040",
+        "DPQ050",
+        "DPQ060",
+        "DPQ070",
+        "DPQ080",
+        "DPQ090"
+      ],
+      "sha256": "1c075f332e79736bd2360b41b0c10ed526883417e0b5996c407b1c564b01ca24",
+      "bytes": 489280
+    },
+    {
+      "name": "SLQ_J",
+      "url": "https://wwwn.cdc.gov/Nchs/Data/Nhanes/Public/2017/DataFiles/SLQ_J.xpt",
+      "rows": 6161,
+      "columns": [
+        "SEQN",
+        "SLD012"
+      ],
+      "sha256": "5486e1c51d56a959c94106d131a11b2e58bdec8ff30917ad7748917c6fa09f3a",
+      "bytes": 470560
+    }
+  ]
+}

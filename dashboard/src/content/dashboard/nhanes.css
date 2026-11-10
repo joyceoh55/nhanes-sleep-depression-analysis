@@ -1,0 +1,13 @@
+.nhanes-content { padding-block: 8px 32px; }
+.nhanes-context { color: var(--secondary); font-size: 14px; margin: 0 0 20px; }
+.nhanes-ci-label { display: block; color: var(--secondary); font-size: 13px; margin-top: 7px; }
+.nhanes-intervals { display: flex; gap: 20px; flex-wrap: wrap; border-top: 1px solid var(--border); margin-top: 12px; padding-top: 14px; }
+.nhanes-intervals > div { display: grid; gap: 5px; flex: 1; min-width: 155px; font-size: 13px; line-height: 1.45; }
+.nhanes-intervals strong { font-size: 14px; }
+.nhanes-muted { color: var(--secondary); }
+.nhanes-footnote { color: var(--secondary); font-size: 13px; line-height: 1.6; margin-block: 28px 0; max-width: 1000px; }
+.nhanes-methods { max-width: 950px; margin-top: 36px; line-height: 1.7; }
+.nhanes-methods h2 { font-size: 20px; line-height: 28px; font-weight: 600; }
+.nhanes-methods p { margin-block: 12px; }
+.nhanes-methods a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 600px) { .nhanes-intervals { gap: 14px; } .nhanes-intervals > div { min-width: 130px; } }

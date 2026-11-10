@@ -1,0 +1,37 @@
+{
+  "question": "How do survey-weighted depressive-symptom prevalence and sample size differ across sleep groups and demographic subgroups?",
+  "sources": [
+    "DEMO_J",
+    "DPQ_J",
+    "SLQ_J"
+  ],
+  "cohort": "Adults age 20+, complete PHQ-9 and weekday/workday sleep, known sex and race/ethnicity, positive WTMEC2YR and valid design variables",
+  "metrics": [
+    "unweighted sample n",
+    "unweighted PHQ-9 >=10 case n",
+    "MEC-weighted prevalence",
+    "Taylor-linearized 95% logit confidence interval"
+  ],
+  "filters": [
+    "sleep category",
+    "sex",
+    "age group"
+  ],
+  "views": [
+    "overview prevalence comparison",
+    "demographic comparisons",
+    "data quality and methods"
+  ],
+  "validation": [
+    "raw source key uniqueness",
+    "left join preserves demographic grain",
+    "SQL vs independent R row and variable match",
+    "SQL weighted grouped sums vs R survey point estimates",
+    "filters recompute weighted denominators and domain intervals"
+  ],
+  "notes": [
+    "DPQ_J requires WTMEC2YR; historical report uses WTINT2YR. Preserve original files, document correction.",
+    "No geography or time trends beyond the 2017-2018 cycle are available.",
+    "PHQ-9 includes a sleep item; association is cross-sectional and not causal."
+  ]
+}

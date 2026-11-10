@@ -1,0 +1,30 @@
+{
+  "raw_rows": {
+    "DEMO_J": 9254,
+    "DPQ_J": 5533,
+    "SLQ_J": 6161
+  },
+  "joined_rows": 9254,
+  "analysis_n": 4765,
+  "unique_analysis_ids": 4765,
+  "depression_orphans": 0,
+  "sleep_orphans": 0,
+  "exclusions": [
+    {
+      "cohort_status": "1 Under 20 or missing age",
+      "sample_n": 3685
+    },
+    {
+      "cohort_status": "2 Incomplete PHQ-9",
+      "sample_n": 744
+    },
+    {
+      "cohort_status": "3 Missing or invalid sleep",
+      "sample_n": 60
+    },
+    {
+      "cohort_status": "7 Included",
+      "sample_n": 4765
+    }
+  ]
+}
