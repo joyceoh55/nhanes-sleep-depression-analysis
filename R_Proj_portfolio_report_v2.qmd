@@ -238,4 +238,3 @@ This is a **cross-sectional** analysis, so the results show **association rather
 ## Conclusion
 
 Findings from this analysis suggest that both short and long sleep duration are associated with higher odds of clinically significant depressive symptoms relative to normal sleep in U.S. adults. More broadly, this project demonstrates a complete public-health analysis workflow in R: downloading public data, cleaning and recoding variables, building a survey design object, generating weighted descriptive statistics, fitting a weighted logistic regression model, and interpreting findings in plain language.
-
